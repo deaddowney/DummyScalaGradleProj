@@ -1,0 +1,11 @@
+
+# /
+/target
+*.iml
+/.gradle
+/.project
+/build
+/.classpath
+#Ignore VersionInfo as it is generated
+VersionInfo.java
+*.bak

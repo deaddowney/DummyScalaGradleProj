@@ -1,0 +1,36 @@
+
+apply plugin: 'scala'
+//Set project wide variables here
+group = 'com.frodo'
+version = '1.0.0-SNAPSHOT'
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+/**
+ * Generates the Gradle Wrapper
+ */
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.4'
+}
+
+
+//Define common test dependencies
+dependencies {
+    compile 'org.scala-lang:scala-library:2.10.0'
+    compile 'org.scala-lang:scala-compiler:2.10.0'
+    testCompile(
+            [group:'org.mockito', name:'mockito-all', version:'1.9.0'],
+            [group:'junit', name:'junit', version:'4.5']
+    )
+}
+//Set Unit test properties
+test {
+    forkEvery 1  //Fork every test into a separate JVM to prevent static interactions
+    systemProperty 'javax.xml.parsers.DocumentBuilderFactory', 'com.pragmafs.util.xml.ResourceLoaderDocumentBuilderFactory'
+}
+
+
