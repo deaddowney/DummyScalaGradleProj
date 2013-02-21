@@ -30,7 +30,6 @@ dependencies {
 //Set Unit test properties
 test {
     forkEvery 1  //Fork every test into a separate JVM to prevent static interactions
-    systemProperty 'javax.xml.parsers.DocumentBuilderFactory', 'com.pragmafs.util.xml.ResourceLoaderDocumentBuilderFactory'
 }
 
 
